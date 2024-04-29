@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SILF\SILF\SILF.Script\SILF.Script.csproj" />
+    <ProjectReference Include="..\..\AccesoAPI\LIN.Access.Inventory\LIN.Access.Inventory.csproj" />
+    <ProjectReference Include="..\..\Tipos\LIN.Types.Cloud.Identity\LIN.Types.Cloud.Identity.csproj" />
+    <ProjectReference Include="..\..\Tipos\LIN.Types.Contacts\LIN.Types.Contacts.csproj" />
+    <ProjectReference Include="..\..\Tipos\LIN.Types.Emma\LIN.Types.Emma.csproj" />
+    <ProjectReference Include="..\..\Tipos\LIN.Types.Exp.Search\LIN.Types.Exp.Search.csproj" />
+    <ProjectReference Include="..\..\Tipos\LIN.Types.Inventory\LIN.Types.Inventory.csproj" />
+    <ProjectReference Include="..\..\Tipos\LIN.Types\LIN.Types.csproj" />
+    <ProjectReference Include="..\LIN.Emma.UI\LIN.Emma.UI\LIN.Emma.UI.csproj" />
+  </ItemGroup>
+
+</Project>
