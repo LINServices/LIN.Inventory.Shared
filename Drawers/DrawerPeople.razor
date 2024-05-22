@@ -1,14 +1,14 @@
 ﻿@inject IJSRuntime JS
 
 <!-- drawer component -->
-<div id="@_id" class="flex items-center justify-center fixed bottom-0 left-0 right-0 z-50 w-full overflow-y-auto transition-transform translate-y-full " tabindex="-1" aria-labelledby="drawer-bottom-label">
+<div id="@_id" class="fixed bottom-0 left-0 right-0 z-50 flex w-full translate-y-full items-center justify-center overflow-y-auto transition-transform" tabindex="-1" aria-labelledby="drawer-bottom-label">
 
-    <div class="w-full lg:max-w-lg p-4 bg-white dark:bg-black rounded-t-xl">
-        <div class="flex flex-col mt-5 min-h-[70dvh] max-h-[70dvh] px-3">
+    <div class="w-full rounded-t-xl bg-white p-4 dark:bg-black lg:max-w-lg">
+        <div class="min-h-[70dvh] max-h-[70dvh] mt-5 flex flex-col px-3">
 
 
             @* Header. *@
-            <div class="flex flex-col w-full items-center justify-center mt-5">
+            <div class="mt-5 flex w-full flex-col items-center justify-center">
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 fill-current-500" viewBox="0 0 24 24">
                     <g id="">
@@ -17,20 +17,20 @@
                 </svg>
 
 
-                <label class="text-xl mt-2 font-bold dark:text-white">Agregar Integrantes</label>
+                <label class="mt-2 text-xl font-bold dark:text-white">Agregar Integrantes</label>
 
-                <div class="w-full mt-2">
-                    <input @oninput="Search" type="text" id="small-input" class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 p-2 text-gray-900 placeholder-gray-400 focus:border-current-500 focus:bg-white focus:outline-none focus:ring-current-500 sm:text-xs dark:bg-zinc-900 focus:dark:bg-zinc-900 dark:border-zinc-700 dark:text-gray-100">
+                <div class="mt-2 w-full">
+                    <input @oninput="Search" type="text" id="small-input" class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 p-2 text-gray-900 placeholder-gray-400 focus:border-current-500 focus:bg-white focus:outline-none focus:ring-current-500 dark:bg-zinc-900 dark:border-zinc-700 dark:text-gray-100 sm:text-xs focus:dark:bg-zinc-900">
                 </div>
 
             </div>
 
             @* Componentes. *@
-            <div class="flex-1 overflow-y-auto gap-3 mt-2 p-1 UIScroll">
+            <div class="flex-1 UIScroll mt-2 gap-3 overflow-y-auto p-1">
 
                 @if (Result.Count <= 0)
                 {
-                    <div class="flex rounded-lg justify-center items-center border-dashed border-2 border-zinc-300 w-full py-7 mt-3 dark:border-gray-400">
+                    <div class="border-2 mt-3 flex w-full items-center justify-center rounded-lg border-dashed border-zinc-300 py-7 dark:border-gray-400">
                         <label class="text-zinc-400 dark:text-gray-200">Sin resultados</label>
                     </div>
                 }
@@ -47,8 +47,8 @@
             </div>
 
             @* Botón Aceptar. *@
-            <div class="flex w-full self-end mt-2 items-end justify-center mb-2">
-                <button id="btn-close-panel-ide" type="button" class="px-3 py-2 w-full text-sm font-medium text-center text-white bg-current-500 rounded-lg hover:bg-current-600 focus:ring-4 focus:outline-none focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">Aceptar</button>
+            <div class="mb-2 mt-2 flex w-full items-end justify-center self-end">
+                <button id="btn-close-panel-ide" type="button" class="w-full rounded-lg bg-current-500 px-3 py-2 text-center text-sm font-medium text-white hover:bg-current-600 focus:ring-4 focus:outline-none focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">Aceptar</button>
             </div>
 
         </div>

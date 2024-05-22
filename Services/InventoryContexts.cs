@@ -1,7 +1,4 @@
-﻿using LIN.Inventory.Shared.Services.Models;
-using LIN.Types.Inventory.Models;
-
-namespace LIN.Inventory.Shared.Services;
+﻿namespace LIN.Inventory.Shared.Services;
 
 
 public static class InventoryContext

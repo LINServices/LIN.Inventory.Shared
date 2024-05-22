@@ -1,8 +1,4 @@
-﻿using LIN.Inventory.Shared.Services.Models;
-using LIN.Inventory.Shared.Services.Observers;
-using LIN.Types.Inventory.Models;
-
-namespace LIN.Inventory.Shared.Drawers;
+﻿namespace LIN.Inventory.Shared.Drawers;
 
 
 public partial class DrawerProducts : IProduct, IDisposable
@@ -19,11 +15,6 @@ public partial class DrawerProducts : IProduct, IDisposable
     /// </summary>
     private List<Types.Inventory.Models.ProductModel> Result = [];
 
-
-    /// <summary>
-    /// Patron de búsqueda.
-    /// </summary>
-    private string Pattern { get; set; } = string.Empty;
 
 
     /// <summary>

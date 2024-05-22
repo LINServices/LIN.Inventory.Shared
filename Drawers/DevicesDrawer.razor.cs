@@ -1,9 +1,4 @@
-﻿
-
-using LIN.Types.Inventory.Models;
-using LIN.Types.Responses;
-
-namespace LIN.Inventory.Shared.Drawers;
+﻿namespace LIN.Inventory.Shared.Drawers;
 
 
 public partial class DevicesDrawer
@@ -16,6 +11,7 @@ public partial class DevicesDrawer
     public string _id = $"element-{Guid.NewGuid()}";
 
 
+
     /// <summary>
     /// Lista de dispositivos.
     /// </summary>
@@ -23,17 +19,20 @@ public partial class DevicesDrawer
     public static ReadAllResponse<DeviceModel> DevicesList { get; set; } = null!;
 
 
+
     /// <summary>
     /// Evento onclick.
     /// </summary>
     [Parameter]
-    public Action<Types.Inventory.Models.DeviceModel> OnInvoke { get; set; } = (d) => { };
+    public Action<DeviceModel> OnInvoke { get; set; } = (d) => { };
+
 
 
     /// <summary>
     /// Es la primer abierta?
     /// </summary>
     public bool FirstShow { get; set; } = true;
+
 
 
     /// <summary>

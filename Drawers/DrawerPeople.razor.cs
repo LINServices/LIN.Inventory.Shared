@@ -16,11 +16,6 @@ public partial class DrawerPeople
     private List<Types.Cloud.Identity.Abstracts.SessionModel<Types.Inventory.Models.ProfileModel>> Result = [];
 
 
-    /// <summary>
-    /// Patron de búsqueda.
-    /// </summary>
-    private string Pattern { get; set; } = string.Empty;
-
 
     /// <summary>
     /// Lista de perfiles seleccionados.
