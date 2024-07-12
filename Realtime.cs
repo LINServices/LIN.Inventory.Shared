@@ -21,6 +21,12 @@ public class Realtime
     public static string DeviceKey { get; private set; } = string.Empty;
 
 
+    /// <summary>
+    /// Platform.
+    /// </summary>
+    public static string DevicePlatform { get; set; } = string.Empty;
+
+
 
     /// <summary>
     /// Funciones
@@ -55,7 +61,8 @@ public class Realtime
         InventoryAccessHub = new(Session.Instance.Token, new()
         {
             Name = DeviceName,
-            LocalId = DeviceKey
+            LocalId = DeviceKey,
+            Platform = DevicePlatform
         });
 
         // Evento.

@@ -46,11 +46,11 @@ public partial class DeviceControl
                 return "./img/android.png";
 
             // Windows
-            case "Windows":
+            case "Windows" or "WinUI":
                 return "./img/windows.png";
 
         }
-        return "";
+        return "./img/unknow.png";
 
     }
 
