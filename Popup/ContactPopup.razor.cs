@@ -1,6 +1,4 @@
-﻿using LIN.Types.Contacts.Models;
-
-namespace LIN.Inventory.Shared.Popup;
+﻿namespace LIN.Inventory.Shared.Popup;
 
 
 public partial class ContactPopup

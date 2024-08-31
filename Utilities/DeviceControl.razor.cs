@@ -10,7 +10,7 @@ public partial class DeviceControl
     /// Modelo del producto.
     /// </summary>
     [Parameter]
-    public LIN.Types.Inventory.Models. DeviceModel? Model { get; set; }
+    public LIN.Types.Inventory.Models.DeviceModel? Model { get; set; }
 
 
 

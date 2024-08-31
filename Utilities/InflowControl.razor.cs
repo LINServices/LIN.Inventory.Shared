@@ -1,6 +1,4 @@
-﻿using LIN.Types.Inventory.Models;
-
-namespace LIN.Inventory.Shared.Utilities;
+﻿namespace LIN.Inventory.Shared.Utilities;
 
 
 public partial class InflowControl

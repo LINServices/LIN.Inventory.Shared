@@ -52,7 +52,7 @@ public partial class DrawerPeople
             return;
 
         // Encuentra el usuario
-        var user = await Access.Inventory.Controllers.Profile.SearhByPattern(e.Value?.ToString() ?? "", Access.Inventory.Session.Instance.AccountToken);
+        var user = await Access.Inventory.Controllers.Profile.SearchByPattern(e.Value?.ToString() ?? "", Access.Inventory.Session.Instance.AccountToken);
 
         Result = user.Models;
         StateHasChanged();

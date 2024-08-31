@@ -10,7 +10,7 @@ public class NotificationObserver
     /// <summary>
     /// Valores.
     /// </summary>
-    private readonly static List<INotificationObserver> Values = [];
+    private static readonly List<INotificationObserver> Values = [];
 
 
 

@@ -2,7 +2,6 @@
 using LIN.Access.Inventory;
 using LIN.Types.Inventory.Enumerations;
 using LIN.Types.Inventory.Transient;
-using LIN.Types.Responses;
 
 namespace LIN.Inventory.Shared.Utilities;
 
@@ -72,9 +71,9 @@ public partial class InvitationControl
     }
 
 
-    async static void UpRealTime(int id)
+    static async void UpRealTime(int id)
     {
-        await Realtime.InventoryAccessHub!.SendCommand(new ()
+        await Realtime.InventoryAccessHub!.SendCommand(new()
         {
             Command = $"newStateInvitation({id})",
             Inventory = 0

@@ -1,7 +1,4 @@
 ﻿using LIN.Types.Contacts.Enumerations;
-using LIN.Types.Contacts.Models;
-using LIN.Types.Responses;
-using Microsoft.JSInterop;
 
 namespace LIN.Inventory.Shared.Popup;
 

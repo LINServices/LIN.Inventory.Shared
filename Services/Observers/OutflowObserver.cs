@@ -8,7 +8,7 @@ public class OutflowObserver
     /// <summary>
     /// Valores.
     /// </summary>
-    private readonly static Dictionary<int, List<IOutflow>> Values = [];
+    private static readonly Dictionary<int, List<IOutflow>> Values = [];
 
 
 

@@ -1,7 +1,4 @@
-﻿using LIN.Types.Inventory.Models;
-using LIN.Types.Responses;
-
-namespace LIN.Inventory.Shared.Services.Models;
+﻿namespace LIN.Inventory.Shared.Services.Models;
 
 
 public class InventoryContextModel

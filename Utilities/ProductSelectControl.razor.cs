@@ -1,11 +1,4 @@
-﻿using LIN.Types.Inventory.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LIN.Inventory.Shared.Utilities;
+﻿namespace LIN.Inventory.Shared.Utilities;
 
 public partial class ProductSelectControl
 {

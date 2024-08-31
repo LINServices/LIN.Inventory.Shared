@@ -8,7 +8,7 @@ public class InflowObserver
     /// <summary>
     /// Valores.
     /// </summary>
-    private readonly static Dictionary<int, List<IInflow>> Values = [];
+    private static readonly Dictionary<int, List<IInflow>> Values = [];
 
 
 

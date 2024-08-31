@@ -8,7 +8,7 @@ public class ProductObserver
     /// <summary>
     /// Valores.
     /// </summary>
-    private readonly static Dictionary<int, List<IProduct>> Values = [];
+    private static readonly Dictionary<int, List<IProduct>> Values = [];
 
 
 

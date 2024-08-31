@@ -1,7 +1,5 @@
 ﻿using LIN.Access.Inventory;
 using LIN.Types.Inventory.Enumerations;
-using LIN.Types.Inventory.Models;
-using LIN.Types.Responses;
 
 namespace LIN.Inventory.Shared.Popup;
 

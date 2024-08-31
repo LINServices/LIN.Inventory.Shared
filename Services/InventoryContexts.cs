@@ -8,7 +8,7 @@ public static class InventoryContext
     /// <summary>
     /// Diccionario.
     /// </summary>
-    public readonly static Dictionary<int, InventoryContextModel> Dictionary = [];
+    public static readonly Dictionary<int, InventoryContextModel> Dictionary = [];
 
 
 

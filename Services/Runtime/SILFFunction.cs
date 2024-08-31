@@ -1,8 +1,8 @@
-﻿using SILF.Script.Elements.Functions;
+﻿using SILF.Script;
 using SILF.Script.Elements;
+using SILF.Script.Elements.Functions;
 using SILF.Script.Interfaces;
 using SILF.Script.Runtime;
-using SILF.Script;
 
 namespace LIN.Inventory.Shared.Services.Runtime;
 
