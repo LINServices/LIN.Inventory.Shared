@@ -57,16 +57,8 @@ public partial class ContactPopup
     /// </summary>
     void Send()
     {
-        //// Nuevo onInvoque.
-        //Layout.MainLayout.DevicesSelector.OnInvoke = (e) =>
-        //{
-        //    Services.Realtime.InventoryAccessHub.SendToDevice(e.Id, new()
-        //    {
-        //        Command = $"viewContact({Modelo?.Id})"
-        //    });
-        //};
-
-        //Components.Layout.MainLayout.DevicesSelector.Show();
+        // Nuevo onInvoque.
+        devices.Send($"viewContact({Modelo?.Id})");
     }
 
 

@@ -4,5 +4,4 @@
 public interface IOpenFiles
 {
     Task<byte[]> OpenFile();
-
 }
