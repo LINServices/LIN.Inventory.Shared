@@ -1,0 +1,10 @@
+﻿@inject NavigationManager navigationManager
+
+@if (!Access.Inventory.Session.IsLocalOpen)
+{
+    Task.Run(async () =>
+    {
+        navigationManager.NavigateTo("/");
+    });
+    return;
+}

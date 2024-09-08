@@ -13,7 +13,6 @@ public partial class DeviceControl
     public LIN.Types.Inventory.Models.DeviceModel? Model { get; set; }
 
 
-
     /// <summary>
     /// Evento al hacer click.
     /// </summary>
