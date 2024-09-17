@@ -35,6 +35,13 @@ public partial class Chart
     private bool IsLoad = false;
 
 
+    /// <summary>
+    /// Acción a ejecutar al presionar refresh.
+    /// </summary>
+    [Parameter]
+    public Action OnRefresh { get; set; } = () => { };
+
+
 
     /// <summary>
     /// Después de renderizar.
@@ -187,10 +194,7 @@ public partial class Chart
 
             }
 
-
-
-
-
+            await js.InvokeVoidAsync("CleanChar");
             await js.InvokeVoidAsync("CharLoad", x.Select(t => t.Date.ToString()), x.Select(t => t.Money));
 
         }
@@ -203,9 +207,9 @@ public partial class Chart
     {
         try
         {
-
             HomeDto = dto;
             StateHasChanged();
+            Render();
         }
         catch
         {
