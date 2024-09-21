@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\SILF\SILF\SILF.Script\SILF.Script.csproj" />
     <ProjectReference Include="..\..\AccesoAPI\LIN.Access.Inventory\LIN.Access.Inventory.csproj" />
     <ProjectReference Include="..\..\Tipos\LIN.Types.Cloud.Identity\LIN.Types.Cloud.Identity.csproj" />
     <ProjectReference Include="..\..\Tipos\LIN.Types.Contacts\LIN.Types.Contacts.csproj" />
