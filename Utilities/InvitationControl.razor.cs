@@ -71,13 +71,9 @@ public partial class InvitationControl
     }
 
 
-    static async void UpRealTime(int id)
+     async void UpRealTime(int id)
     {
-        await Realtime.InventoryAccessHub!.SendCommand(new()
-        {
-            Command = $"newStateInvitation({id})",
-            Inventory = 0
-        });
+        await deviceManager.SendCommand($"newStateInvitation({id})");
     }
 
 }

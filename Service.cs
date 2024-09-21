@@ -6,12 +6,10 @@ namespace LIN.Inventory.Shared;
 public class Service
 {
 
-
     /// <summary>
     /// Servicio de archivos.
     /// </summary>
     internal static IOpenFiles? FileService;
-
 
 
     /// <summary>
@@ -22,6 +20,5 @@ public class Service
     {
         FileService = service;
     }
-
 
 }
