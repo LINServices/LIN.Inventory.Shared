@@ -1,11 +1,10 @@
-﻿@inject IJSRuntime JS
+﻿@inject IJSRuntime JsRuntime
 
 <!-- drawer component -->
 <div id="@_id" class="fixed bottom-0 left-0 right-0 z-50 flex w-full translate-y-full items-center justify-center overflow-y-auto transition-transform" tabindex="-1" aria-labelledby="drawer-bottom-label">
 
     <div class="w-full rounded-t-xl bg-white p-4 dark:bg-black lg:max-w-lg">
-        <div class="min-h-[70dvh] max-h-[70dvh] mt-5 flex flex-col px-3">
-
+        <div class="mt-5 flex max-h-[70dvh] min-h-[70dvh] flex-col px-3">
 
             @* Header. *@
             <div class="mt-5 flex w-full flex-col items-center justify-center">
@@ -15,7 +14,6 @@
                         <path d="M17,20a1,1,0,0,1-2,0,5,5,0,0,0-5-5H8a5,5,0,0,0-5,5,1,1,0,0,1-2,0,7,7,0,0,1,4.16-6.39,6,6,0,1,1,7.68,0A7,7,0,0,1,17,20ZM22,8H21V7a1,1,0,0,0-2,0V8H18a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0V10h1a1,1,0,0,0,0-2Z" />
                     </g>
                 </svg>
-
 
                 <label class="mt-2 text-xl font-bold dark:text-white">Agregar Integrantes</label>
 
@@ -43,7 +41,6 @@
                     }
                 }
 
-
             </div>
 
             @* Botón Aceptar. *@
@@ -52,7 +49,5 @@
             </div>
 
         </div>
-
     </div>
-
 </div>

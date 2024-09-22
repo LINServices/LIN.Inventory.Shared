@@ -1,5 +1,5 @@
 ﻿@inject IJSRuntime Js
-
+@inject IOpenFiles openFile
 
 <!-- Small Modal -->
 <div id="small-modal-@Key" tabindex="-1" class="h-[calc(100%-1rem)] UIScroll fixed left-0 right-0 top-0 z-50 hidden max-h-dvh w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0">
@@ -52,7 +52,7 @@
 
                         <div class="w-full">
                             <label for="small-input" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Perfil</label>
-                            <div @onclick="async ()=> Profile = await Service.FileService?.OpenFile()" class="flex items-center w-full appearance-none rounded-md border border-gray-200 bg-gray-50 p-2 text-gray-900 focus:border-current-500 focus:bg-white focus:outline-none focus:ring-current-500 sm:text-xs dark:bg-[#2C2C2C] focus:dark:bg-[#323232] dark:border-zinc-700 dark:text-gray-100">
+                            <div @onclick="async ()=> Profile = await openFile.OpenFile()" class="flex items-center w-full appearance-none rounded-md border border-gray-200 bg-gray-50 p-2 text-gray-900 focus:border-current-500 focus:bg-white focus:outline-none focus:ring-current-500 sm:text-xs dark:bg-[#2C2C2C] focus:dark:bg-[#323232] dark:border-zinc-700 dark:text-gray-100">
 
                                 @if(Profile.Length <=0)
                                 {
@@ -86,11 +86,8 @@
                             <label for="small-input" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Dirección</label>
                             <input @bind="Dirección" type="text" id="small-input" class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 p-2 text-gray-900 placeholder-gray-400 focus:border-current-500 focus:bg-white focus:outline-none focus:ring-current-500 dark:bg-[#2C2C2C] dark:border-zinc-700 dark:text-gray-100 sm:text-xs focus:dark:bg-[#323232]">
                         </div>
-
                     </div>
-
                 </div>
-
 
                 @* Botón *@
                 <div class="mt-5 px-7">

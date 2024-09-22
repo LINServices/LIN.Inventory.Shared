@@ -3,7 +3,6 @@ using LIN.Types.Inventory.Enumerations;
 
 namespace LIN.Inventory.Shared.Popup;
 
-
 public partial class MemberPopup
 {
 
@@ -35,23 +34,24 @@ public partial class MemberPopup
     public Action OnSuccess { get; set; } = () => { };
 
 
+    /// <summary>
+    /// Acción al presionar sobre el botón de eliminar.
+    /// </summary>
     [Parameter]
     public Action<int> OnDelete { get; set; } = (id) => { };
 
 
 
-    int val = 0;
+    private int _type = 0;
     int Type
     {
-        get => val; set
+        get => _type; set
         {
-
-            val = value;
+            _type = value;
             InvokeAsync(StateHasChanged);
         }
 
     }
-
 
 
     /// <summary>
@@ -59,38 +59,42 @@ public partial class MemberPopup
     /// </summary>
     public async void Show()
     {
-
         try
         {
-
             // Abrir el popup.
             await Js.InvokeVoidAsync("ShowModal", "small-modal-member", "closeee-member", "close-btn-send-member");
             StateHasChanged();
         }
-        catch
+        catch (Exception)
         {
         }
-
     }
-
 
 
     /// <summary>
     /// Abrir el popup.
     /// </summary>
-    public async void Show(IntegrantDataModel contact)
+    public void Show(IntegrantDataModel contact)
     {
         Model = contact;
-        val = (int)Model.Rol;
-
+        _type = (int)Model.Rol;
         Show();
-
     }
 
 
-    async void Change(Microsoft.AspNetCore.Components.ChangeEventArgs e)
+    /// <summary>
+    /// Actualizar el rol.
+    /// </summary>
+    private async void Change(Microsoft.AspNetCore.Components.ChangeEventArgs e)
     {
+        // Obtener el rol.
         var newRol = int.Parse(e.Value?.ToString() ?? "0");
+
+        // Validación.
+        if (Model is null)
+            return;
+
+        // Enviar update.
         var response = await Access.Inventory.Controllers.InventoryAccess.UpdateRol(Model.AccessID, (InventoryRoles)newRol, Session.Instance.Token);
 
         if (response.Response == Responses.Success)
@@ -98,19 +102,24 @@ public partial class MemberPopup
             Model.Rol = (InventoryRoles)newRol;
             OnSuccess();
         }
-
     }
 
 
+    /// <summary>
+    /// Eliminar integrante.
+    /// </summary>
     async void Delete()
     {
-        int id = Model.AccessID;
+
+        // Validación.
+        if (Model is null)
+            return;
+
+        // Enviar petición.
         var response = await Access.Inventory.Controllers.InventoryAccess.DeleteSomeOne(Model.InventoryID, Model.ProfileID, Session.Instance.Token);
 
         if (response.Response == Responses.Success)
-        {
-            OnDelete(id);
-        }
+            OnDelete(Model.AccessID);
     }
 
 }

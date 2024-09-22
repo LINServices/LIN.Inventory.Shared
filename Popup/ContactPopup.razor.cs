@@ -1,6 +1,5 @@
 ﻿namespace LIN.Inventory.Shared.Popup;
 
-
 public partial class ContactPopup
 {
 
@@ -11,12 +10,10 @@ public partial class ContactPopup
     public Action<ContactModel> OnEdit { get; set; } = (e) => { };
 
 
-
     /// <summary>
     /// Key.
     /// </summary>
     private string Key { get; init; } = Guid.NewGuid().ToString();
-
 
 
     /// <summary>
@@ -25,31 +22,24 @@ public partial class ContactPopup
     public ContactModel? Modelo { get; set; }
 
 
-
     /// <summary>
     /// Abrir el modal.
     /// </summary>
     public void Show(ContactModel model)
     {
-
         Modelo = model;
-
         _ = InvokeAsync(() =>
         {
             StateHasChanged();
             Js.InvokeVoidAsync("ShowModal", $"modal-{Key}", $"btn-{Key}", "close-btn-send");
-
         });
-
     }
-
 
 
     /// <summary>
     /// Imagen en base64.
     /// </summary>
     string Img64 => Convert.ToBase64String(Modelo?.Picture ?? []);
-
 
 
     /// <summary>
@@ -60,6 +50,5 @@ public partial class ContactPopup
         // Nuevo onInvoque.
         devices.Send($"viewContact({Modelo?.Id})");
     }
-
 
 }

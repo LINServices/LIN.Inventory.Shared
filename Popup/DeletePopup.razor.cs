@@ -1,13 +1,13 @@
 ﻿namespace LIN.Inventory.Shared.Popup;
 
-
 public partial class DeletePopup
 {
 
-
-
+    /// <summary>
+    /// Mensaje.
+    /// </summary>
     [Parameter]
-    public string Content { get; set; }
+    public string? Content { get; set; }
 
 
     /// <summary>
@@ -17,17 +17,17 @@ public partial class DeletePopup
     public Action OnAccept { get; set; } = () => { };
 
 
+    /// <summary>
+    /// Acción al presionar sobre el botón de cancelar.
+    /// </summary>
     [Parameter]
     public Action OnCancel { get; set; } = () => { };
-
 
 
     /// <summary>
     /// Key.
     /// </summary>
     private string Key { get; init; } = Guid.NewGuid().ToString();
-
-
 
 
     /// <summary>
@@ -39,10 +39,7 @@ public partial class DeletePopup
         {
             StateHasChanged();
             Js.InvokeVoidAsync("ShowModal", $"popup-modal-{Key}", $"btn-accept-{Key}", $"btn-cancel-{Key}", $"btn-close-{Key}");
-
         });
-
     }
-
 
 }

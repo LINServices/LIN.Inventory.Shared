@@ -1,6 +1,5 @@
 ﻿namespace LIN.Inventory.Shared.Drawers;
 
-
 public partial class DrawerPeople
 {
 
@@ -14,7 +13,6 @@ public partial class DrawerPeople
     /// Resultado de búsqueda.
     /// </summary>
     private List<Types.Cloud.Identity.Abstracts.SessionModel<Types.Inventory.Models.ProfileModel>> Result = [];
-
 
 
     /// <summary>
@@ -38,8 +36,6 @@ public partial class DrawerPeople
     public Action OnShow { get; set; } = () => { };
 
 
-
-
     /// <summary>
     /// Buscar.
     /// </summary>
@@ -59,15 +55,13 @@ public partial class DrawerPeople
     }
 
 
-
     /// <summary>
     /// Abrir drawer.
     /// </summary>
     public async void Show()
     {
-        await JS.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), "btn-close-panel-ide");
+        await JsRuntime.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), "btn-close-panel-ide");
     }
-
 
 
     /// <summary>
@@ -77,13 +71,11 @@ public partial class DrawerPeople
     public void HideJS() => OnHide.Invoke();
 
 
-
     /// <summary>
     /// Evento al abrir.
     /// </summary>
     [JSInvokable("OnShow")]
     public void ShowJS() => OnShow.Invoke();
-
 
 
     /// <summary>
@@ -96,7 +88,6 @@ public partial class DrawerPeople
     }
 
 
-
     /// <summary>
     /// Deseleccionar un perfil.
     /// </summary>
@@ -105,7 +96,6 @@ public partial class DrawerPeople
     {
         Selected.RemoveAll(t => t.Profile.ID == profile);
     }
-
 
 
     /// <summary>
@@ -127,6 +117,5 @@ public partial class DrawerPeople
         StateHasChanged();
 
     }
-
 
 }

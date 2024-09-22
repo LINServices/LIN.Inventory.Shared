@@ -1,7 +1,9 @@
-﻿namespace LIN.Inventory.Shared.Drawers;
+﻿using LIN.Inventory.Realtime.Manager.Interfaces;
+using LIN.Inventory.Realtime.Manager.Models;
 
+namespace LIN.Inventory.Shared.Drawers;
 
-public partial class DrawerProducts : IProduct, IDisposable
+public partial class DrawerProducts : IProductModelObserver, IDisposable
 {
 
     /// <summary>
@@ -14,7 +16,6 @@ public partial class DrawerProducts : IProduct, IDisposable
     /// Resultado de búsqueda.
     /// </summary>
     private List<Types.Inventory.Models.ProductModel> Result = [];
-
 
 
     /// <summary>
@@ -43,10 +44,12 @@ public partial class DrawerProducts : IProduct, IDisposable
     /// Evento al mostrar.
     /// </summary>
     [Parameter]
-    public InventoryContextModel Contexto { get; set; } = null!;
+    public InventoryContext Contexto { get; set; } = null!;
 
 
-
+    /// <summary>
+    /// Al establecer parámetros.
+    /// </summary>
     protected override void OnParametersSet()
     {
         Result = Contexto.Products?.Models ?? [];
@@ -55,7 +58,6 @@ public partial class DrawerProducts : IProduct, IDisposable
 
         base.OnParametersSet();
     }
-
 
 
     /// <summary>
@@ -73,7 +75,6 @@ public partial class DrawerProducts : IProduct, IDisposable
             return;
         }
 
-
         // Encuentra el usuario
         var products = Contexto.Products?.Models.Where(t => t.Name.Contains(e.Value!.ToString()!)).ToList();
 
@@ -82,15 +83,13 @@ public partial class DrawerProducts : IProduct, IDisposable
     }
 
 
-
     /// <summary>
     /// Abrir drawer.
     /// </summary>
     public async void Show()
     {
-        await JS.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-panel-ide-{_id}");
+        await JsRuntime.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-panel-ide-{_id}");
     }
-
 
 
     /// <summary>
@@ -100,13 +99,11 @@ public partial class DrawerProducts : IProduct, IDisposable
     public void HideJS() => OnHide.Invoke();
 
 
-
     /// <summary>
     /// Evento al abrir.
     /// </summary>
     [JSInvokable("OnShow")]
     public void ShowJS() => OnShow.Invoke();
-
 
 
     /// <summary>
@@ -119,7 +116,6 @@ public partial class DrawerProducts : IProduct, IDisposable
     }
 
 
-
     /// <summary>
     /// Deseleccionar un perfil.
     /// </summary>
@@ -128,7 +124,6 @@ public partial class DrawerProducts : IProduct, IDisposable
     {
         Selected.RemoveAll(t => t.Id == id);
     }
-
 
 
     /// <summary>
@@ -171,6 +166,10 @@ public partial class DrawerProducts : IProduct, IDisposable
         });
     }
 
+
+    /// <summary>
+    /// Dispose.
+    /// </summary>
     public void Dispose()
     {
         InvokeAsync(() =>

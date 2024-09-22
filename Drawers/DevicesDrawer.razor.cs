@@ -1,15 +1,12 @@
 ﻿namespace LIN.Inventory.Shared.Drawers;
 
-
 public partial class DevicesDrawer
 {
-
 
     /// <summary>
     /// ID del elemento Html.
     /// </summary>
     public string _id = $"element-{Guid.NewGuid()}";
-
 
 
     /// <summary>
@@ -19,7 +16,6 @@ public partial class DevicesDrawer
     public static ReadAllResponse<DeviceModel> DevicesList { get; set; } = null!;
 
 
-
     /// <summary>
     /// Evento onclick.
     /// </summary>
@@ -27,12 +23,10 @@ public partial class DevicesDrawer
     public Action<DeviceModel> OnInvoke { get; set; } = (d) => { };
 
 
-
     /// <summary>
     /// Es la primer abierta?
     /// </summary>
     public bool FirstShow { get; set; } = true;
-
 
 
     /// <summary>
@@ -42,8 +36,7 @@ public partial class DevicesDrawer
     {
 
         // Abrir el elemento.
-        await JS.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-{_id}", "close-all-all");
-
+        await JsRuntime.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-{_id}", "close-all-all");
 
         // Si es el primer open.
         if (FirstShow)
@@ -53,7 +46,6 @@ public partial class DevicesDrawer
         }
         StateHasChanged();
     }
-
 
 
     /// <summary>
@@ -69,12 +61,11 @@ public partial class DevicesDrawer
         DevicesList = items;
 
         // Eliminar dispositivo local.
-        items.Models.RemoveAll(t => t.LocalId == device.Key);
+        items.Models.RemoveAll(t => t.LocalId == Device.Key);
 
         StateHasChanged();
         return true;
 
     }
-
 
 }

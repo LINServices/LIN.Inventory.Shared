@@ -17,10 +17,11 @@ public partial class ProfileControl
     public Action<Types.Cloud.Identity.Abstracts.SessionModel<Types.Inventory.Models.ProfileModel>?>? OnClick { get; set; }
 
 
-
+    /// <summary>
+    /// Estado.
+    /// </summary>
     [Parameter]
     public bool State { get; set; }
-
 
 
     /// <summary>

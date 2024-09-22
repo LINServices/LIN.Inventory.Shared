@@ -2,7 +2,6 @@
 
 namespace LIN.Inventory.Shared.Popup;
 
-
 public partial class NewContactPopup
 {
 
@@ -36,9 +35,10 @@ public partial class NewContactPopup
     private byte[] Profile { get; set; } = [];
 
 
-
+    /// <summary>
+    /// Imagen en base64.
+    /// </summary>
     string Img64 => Convert.ToBase64String(Profile);
-
 
 
     /// <summary>
@@ -53,7 +53,6 @@ public partial class NewContactPopup
     public string Key = Guid.NewGuid().ToString();
 
 
-
     /// <summary>
     /// Abrir el modal.
     /// </summary>
@@ -63,7 +62,6 @@ public partial class NewContactPopup
         StateHasChanged();
         await Js.InvokeVoidAsync("ShowModal", $"small-modal-{Key}", $"close-{Key}");
     }
-
 
 
     /// <summary>
@@ -99,7 +97,6 @@ public partial class NewContactPopup
             }]
         };
 
-
         // Respuesta del controlador
         var response = await Access.Inventory.Controllers.Contact.Create(Access.Inventory.Session.Instance.ContactsToken, modelo);
 
@@ -116,7 +113,5 @@ public partial class NewContactPopup
         StateHasChanged();
 
     }
-
-
 
 }

@@ -1,5 +1,5 @@
-﻿@inject IJSRuntime JS
-@inject IDevice device
+﻿@inject IJSRuntime JsRuntime
+@inject IDevice Device
 
 <!-- drawer component -->
 <div id="@_id" class="fixed bottom-0 left-0 right-0 z-50 flex w-full translate-y-full items-center justify-center overflow-y-auto transition-transform" tabindex="-1" aria-labelledby="drawer-bottom-label">
@@ -10,10 +10,8 @@
 
             @* Header. *@
             <div class="mt-5 flex w-full flex-col items-center justify-center">
-
                 <img class="h-10 w-10" src="./img/device.png" />
                 <label class="mt-2 text-xl font-bold dark:text-white">Dispositivos</label>
-
             </div>
 
             @* Componentes. *@
@@ -44,7 +42,6 @@
                         <DeviceControl Model="e" OnClick="OnInvoke" />
                     }
                 }
-
             </div>
 
             @* Obtener dispositivos. *@
@@ -54,6 +51,5 @@
             </div>
 
         </div>
-
     </div>
 </div>

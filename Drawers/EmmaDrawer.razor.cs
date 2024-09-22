@@ -1,9 +1,7 @@
 ﻿namespace LIN.Inventory.Shared.Drawers;
 
-
 public partial class EmmaDrawer
 {
-
 
     /// <summary>
     /// ID del elemento Html.
@@ -12,37 +10,40 @@ public partial class EmmaDrawer
 
 
     /// <summary>
+    /// Emma drawer.
+    /// </summary>
+    private Emma.UI.Emma? DocEmma { get; set; }
+
+
+    /// <summary>
     /// Abrir el elemento.
     /// </summary>
     public async void Show()
     {
-
         // Abrir el elemento.
-        await JS.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-{_id}", "close-all-all");
-
+        await JsRuntime.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-{_id}", "close-all-all");
     }
 
-    LIN.Emma.UI.Emma DocEmma { get; set; }
-
-
-
-
-
+    
+    /// <summary>
+    /// Después de renderizar.
+    /// </summary>
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
-        if (firstRender)
+        if (firstRender && DocEmma is not null)
         {
-            //   LIN.Emma.UI.Functions.LoadActions(Scripts.Actions);
             DocEmma.OnPromptRequire += DocEmma_OnPromptRequire;
         }
 
     }
 
 
+    /// <summary>
+    /// Al recibir respuesta de Emma.
+    /// </summary>
     private void DocEmma_OnPromptRequire(object? sender, string e)
     {
-
         if (DocEmma != null)
             DocEmma.ResponseIA = Access.Inventory.Controllers.Profile.ToEmma(e, Access.Inventory.Session.Instance.AccountToken);
     }
