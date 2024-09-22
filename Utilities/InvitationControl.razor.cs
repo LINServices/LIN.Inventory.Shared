@@ -71,7 +71,7 @@ public partial class InvitationControl
     }
 
 
-     async void UpRealTime(int id)
+    async void UpRealTime(int id)
     {
         await deviceManager.SendCommand($"newStateInvitation({id})");
     }

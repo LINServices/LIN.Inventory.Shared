@@ -24,7 +24,7 @@ public partial class EmmaDrawer
         await JsRuntime.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-{_id}", "close-all-all");
     }
 
-    
+
     /// <summary>
     /// Después de renderizar.
     /// </summary>

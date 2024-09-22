@@ -3,7 +3,7 @@ using LIN.Inventory.Realtime.Manager.Models;
 
 namespace LIN.Inventory.Shared.Drawers;
 
-public partial class DrawerProducts : IProductModelObserver, IDisposable
+public partial class DrawerProducts : IInventoryModelObserver, IDisposable
 {
 
     /// <summary>
