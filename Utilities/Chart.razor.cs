@@ -194,8 +194,8 @@ public partial class Chart
 
             }
 
-            await js.InvokeVoidAsync("CleanChar");
-            await js.InvokeVoidAsync("CharLoad", x.Select(t => t.Date.ToString()), x.Select(t => t.Money));
+            await js.InvokeVoidAsync("cleanChart");
+            await js.InvokeVoidAsync("loadChart", x.Select(t => t.Date.ToString()), x.Select(t => t.Money));
 
         }
         catch (Exception) { }

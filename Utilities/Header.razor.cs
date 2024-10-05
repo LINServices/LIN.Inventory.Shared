@@ -28,7 +28,7 @@ public partial class Header
 
     void GoBackPage()
     {
-        JS.InvokeVoidAsync("BackLast");
+        JS.InvokeVoidAsync("backLast");
     }
 
 

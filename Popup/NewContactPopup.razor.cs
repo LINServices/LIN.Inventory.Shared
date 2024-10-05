@@ -60,7 +60,7 @@ public partial class NewContactPopup
     {
         state = 0;
         StateHasChanged();
-        await Js.InvokeVoidAsync("ShowModal", $"small-modal-{Key}", $"close-{Key}");
+        await Js.InvokeVoidAsync("showModal", $"small-modal-{Key}", DotNetObjectReference.Create(this), $"close-{Key}");
     }
 
 

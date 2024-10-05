@@ -36,7 +36,7 @@ public partial class DevicesDrawer
     {
 
         // Abrir el elemento.
-        await JsRuntime.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-{_id}", "close-all-all");
+        await JsRuntime.InvokeVoidAsync("showDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-{_id}", "close-all-all");
 
         // Si es el primer open.
         if (FirstShow)

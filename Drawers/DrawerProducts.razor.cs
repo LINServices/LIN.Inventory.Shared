@@ -88,7 +88,7 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
     /// </summary>
     public async void Show()
     {
-        await JsRuntime.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-panel-ide-{_id}");
+        await JsRuntime.InvokeVoidAsync("showDrawer", _id, DotNetObjectReference.Create(this), $"btn-close-panel-ide-{_id}");
     }
 
 

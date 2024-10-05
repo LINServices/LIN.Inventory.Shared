@@ -38,7 +38,7 @@ public partial class DeletePopup
         _ = InvokeAsync(() =>
         {
             StateHasChanged();
-            Js.InvokeVoidAsync("ShowModal", $"popup-modal-{Key}", $"btn-accept-{Key}", $"btn-cancel-{Key}", $"btn-close-{Key}");
+            JSRuntime.InvokeVoidAsync("showModal", $"popup-modal-{Key}", DotNetObjectReference.Create(this), $"btn-accept-{Key}", $"btn-cancel-{Key}", $"btn-close-{Key}");
         });
     }
 

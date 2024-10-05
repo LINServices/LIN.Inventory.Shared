@@ -62,7 +62,7 @@ public partial class MemberPopup
         try
         {
             // Abrir el popup.
-            await Js.InvokeVoidAsync("ShowModal", "small-modal-member", "closeee-member", "close-btn-send-member");
+            await Js.InvokeVoidAsync("showModal", "small-modal-member", DotNetObjectReference.Create(this), "closeee-member", "close-btn-send-member");
             StateHasChanged();
         }
         catch (Exception)

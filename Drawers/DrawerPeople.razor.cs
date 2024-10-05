@@ -60,7 +60,7 @@ public partial class DrawerPeople
     /// </summary>
     public async void Show()
     {
-        await JsRuntime.InvokeVoidAsync("ShowDrawer", _id, DotNetObjectReference.Create(this), "btn-close-panel-ide");
+        await JsRuntime.InvokeVoidAsync("showDrawer", _id, DotNetObjectReference.Create(this), "btn-close-panel-ide");
     }
 
 

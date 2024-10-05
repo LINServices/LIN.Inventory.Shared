@@ -31,7 +31,7 @@ public partial class ContactPopup
         _ = InvokeAsync(() =>
         {
             StateHasChanged();
-            Js.InvokeVoidAsync("ShowModal", $"modal-{Key}", $"btn-{Key}", "close-btn-send");
+            Js.InvokeVoidAsync("showModal", $"modal-{Key}", DotNetObjectReference.Create(this), $"btn-{Key}", "close-btn-send");
         });
     }
 
