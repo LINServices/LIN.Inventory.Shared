@@ -21,12 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\AccesoAPI\LIN.Access.Inventory\LIN.Access.Inventory.csproj" />
-    <ProjectReference Include="..\..\Tipos\LIN.Types.Cloud.Identity\LIN.Types.Cloud.Identity.csproj" />
-    <ProjectReference Include="..\..\Tipos\LIN.Types.Cloud.OpenAssistant\LIN.Types.Cloud.OpenAssistant.csproj" />
-    <ProjectReference Include="..\..\Tipos\LIN.Types.Contacts\LIN.Types.Contacts.csproj" />
-    <ProjectReference Include="..\..\Tipos\LIN.Types.Exp.Search\LIN.Types.Exp.Search.csproj" />
-    <ProjectReference Include="..\..\Tipos\LIN.Types.Inventory\LIN.Types.Inventory.csproj" />
-    <ProjectReference Include="..\..\Tipos\LIN.Types\LIN.Types.csproj" />
     <ProjectReference Include="..\LIN.Emma.UI\LIN.Emma.UI\LIN.Emma.UI.csproj" />
     <ProjectReference Include="..\LIN.Inventory.Realtime\LIN.Inventory.Realtime.csproj" />
   </ItemGroup>
