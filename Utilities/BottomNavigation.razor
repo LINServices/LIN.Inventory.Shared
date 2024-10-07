@@ -1,7 +1,7 @@
 ﻿@inject NavigationManager navigationManager
 
-<div class="bottom-4 mx-1.5 h-16 w-full max-w-lg rounded-full border border-gray-200 bg-white dark:bg-zinc-900 dark:border-zinc-700">
-    <div class="grid-cols-5 mx-auto grid h-full max-w-lg">
+<div class="bottom-4 mx-1.5 h-16 border-gray-200 bg-white w-full max-w-lg rounded-full border dark:bg-zinc-900 dark:border-zinc-700">
+    <div class="mx-auto grid h-full max-w-lg grid-cols-5">
 
         @* Botón de Home *@
         <button @onclick="()=>GoSection(0)" data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-zinc-800 group">
@@ -23,7 +23,7 @@
 
         @* Botón central *@
         <div class="flex items-center justify-center">
-            <button @onclick="Settings.OnCenterClick" data-tooltip-target="tooltip-new" type="button" class="group inline-flex h-10 w-10 items-center justify-center rounded-full bg-current-500 font-medium hover:bg-current-700 focus:ring-4 focus:ring-current-300 focus:outline-none dark:focus:ring-current-800">
+            <button @onclick="Settings.OnCenterClick" data-tooltip-target="tooltip-new" type="button" class="h-10 w-10 bg-current-500 group inline-flex items-center justify-center rounded-full font-medium hover:bg-current-700 focus:ring-4 focus:ring-current-300 focus:outline-none dark:focus:ring-current-800">
                 @if (Settings.DockIcon == 0)
                 {
                     <svg class="h-4 w-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -42,7 +42,7 @@
                 }
                 else if (Settings.DockIcon == 3)
                 {
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-white" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-white" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" /></svg>
                 }
 
                 <span class="sr-only">Center</span>

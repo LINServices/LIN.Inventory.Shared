@@ -1,6 +1,5 @@
 ﻿namespace LIN.Inventory.Shared.Utilities;
 
-
 public partial class MemberControl
 {
 
@@ -18,10 +17,11 @@ public partial class MemberControl
     public Action<IntegrantDataModel?>? OnClick { get; set; }
 
 
-
+    /// <summary>
+    /// Estado.
+    /// </summary>
     [Parameter]
     public bool State { get; set; }
-
 
 
     /// <summary>
@@ -31,4 +31,5 @@ public partial class MemberControl
     {
         OnClick?.Invoke(Model);
     }
+
 }

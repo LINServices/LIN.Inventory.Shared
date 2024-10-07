@@ -3,9 +3,16 @@
 public partial class AlertPopup
 {
 
+    /// <summary>
+    /// Al aceptar.
+    /// </summary>
     [Parameter]
     public Action OnAccept { get; set; } = () => { };
 
+
+    /// <summary>
+    /// Contenido.
+    /// </summary>
     public string? Content { get; set; }
 
 
