@@ -39,13 +39,13 @@ public partial class ContactPopup
     /// <summary>
     /// Imagen en base64.
     /// </summary>
-    string Img64 => Convert.ToBase64String(Modelo?.Picture ?? []);
+    private string Img64 => Convert.ToBase64String(Modelo?.Picture ?? []);
 
 
     /// <summary>
     /// Enviar el comando al selector.
     /// </summary>
-    void Send()
+    private void Send()
     {
         // Nuevo onInvoque.
         devices.Send($"viewContact({Modelo?.Id})");

@@ -36,7 +36,7 @@
                 {
                     @foreach (var e in Result)
                     {
-                        bool exist = Selected.Any(t => t.Profile.ID == e.Profile.ID);
+                        bool exist = Selected.Any(t => t.Profile.Id == e.Profile.Id);
                         <ProfileControl Model="e" State="exist" OnClick="(e)=>SelectControl(e, exist)"></ProfileControl>
                     }
                 }

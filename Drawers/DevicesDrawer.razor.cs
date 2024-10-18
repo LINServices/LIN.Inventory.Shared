@@ -61,8 +61,7 @@ public partial class DevicesDrawer
         DevicesList = items;
 
         // Eliminar dispositivo local.
-        items.Models.RemoveAll(t => t.LocalId == Device.Key);
-
+        items.Models = items.Models.Where(t => t.LocalId != Device.Key).ToList();
         StateHasChanged();
         return true;
 

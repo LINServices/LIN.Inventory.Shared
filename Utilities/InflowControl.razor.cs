@@ -36,20 +36,14 @@ public partial class InflowControl
 
 
 
-        switch (Model.Type)
+        return Model.Type switch
         {
-            case Types.Inventory.Enumerations.InflowsTypes.Compra:
-                return "./img/Products/inflows/cart.png";
-            case Types.Inventory.Enumerations.InflowsTypes.Devolucion:
-                return "./img/Products/inflows/return.png";
-            case Types.Inventory.Enumerations.InflowsTypes.Regalo:
-                return "./img/Products/inflows/gift.png";
-            case Types.Inventory.Enumerations.InflowsTypes.Ajuste:
-                return "./img/Products/inflows/setting.png";
-            default:
-                return "./img/Products/packages.png";
-        }
-
+            Types.Inventory.Enumerations.InflowsTypes.Compra => "./img/Products/inflows/cart.png",
+            Types.Inventory.Enumerations.InflowsTypes.Devolucion => "./img/Products/inflows/return.png",
+            Types.Inventory.Enumerations.InflowsTypes.Regalo => "./img/Products/inflows/gift.png",
+            Types.Inventory.Enumerations.InflowsTypes.Ajuste => "./img/Products/inflows/setting.png",
+            _ => "./img/Products/packages.png",
+        };
     }
 
 }

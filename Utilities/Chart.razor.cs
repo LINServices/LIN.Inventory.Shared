@@ -112,10 +112,9 @@ public partial class Chart
         try
         {
 
-            if (HomeDto == null)
-                return "0";
-
-            return ((HomeDto.WeekSalesTotal - HomeDto.LastWeekSalesTotal) / HomeDto.LastWeekSalesTotal * 100).ToString("0.#");
+            return HomeDto == null
+                ? "0"
+                : ((HomeDto.WeekSalesTotal - HomeDto.LastWeekSalesTotal) / HomeDto.LastWeekSalesTotal * 100).ToString("0.#");
         }
         catch (Exception)
         {
@@ -123,12 +122,7 @@ public partial class Chart
         return "0";
     }
 
-
-
-
-
-
-    static string FormatearNumero(decimal numero)
+    private static string FormatearNumero(decimal numero)
     {
         // Definir los límites para las representaciones abreviadas
         const int mill = 1000000;

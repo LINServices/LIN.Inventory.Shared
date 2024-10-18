@@ -20,10 +20,9 @@ public partial class InvitationControl
     [Parameter]
     public Action OnRemove { get; set; }
 
-    int section = 1;
+    private int section = 1;
 
-
-    async void Accept()
+    private async void Accept()
     {
         int id = Model.ID;
         section = 0;
@@ -45,8 +44,7 @@ public partial class InvitationControl
 
     }
 
-
-    async void Decline()
+    private async void Decline()
     {
 
         int id = Model.ID;
@@ -70,8 +68,7 @@ public partial class InvitationControl
 
     }
 
-
-    async void UpRealTime(int id)
+    private async void UpRealTime(int id)
     {
         await deviceManager.SendCommand($"newStateInvitation({id})");
     }

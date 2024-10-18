@@ -38,7 +38,7 @@ public partial class NewContactPopup
     /// <summary>
     /// Imagen en base64.
     /// </summary>
-    string Img64 => Convert.ToBase64String(Profile);
+    private string Img64 => Convert.ToBase64String(Profile);
 
 
     /// <summary>

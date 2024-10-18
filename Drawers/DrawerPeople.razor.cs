@@ -50,7 +50,7 @@ public partial class DrawerPeople
         // Encuentra el usuario
         var user = await Access.Inventory.Controllers.Profile.SearchByPattern(e.Value?.ToString() ?? "", Access.Inventory.Session.Instance.AccountToken);
 
-        Result = user.Models;
+        Result = user.Models.ToList();
         StateHasChanged();
     }
 
@@ -82,7 +82,7 @@ public partial class DrawerPeople
     /// Seleccionar un perfil.
     /// </summary>
     /// <param name="e">Perfil.</param>
-    void Select(Types.Cloud.Identity.Abstracts.SessionModel<Types.Inventory.Models.ProfileModel> e)
+    private void Select(Types.Cloud.Identity.Abstracts.SessionModel<Types.Inventory.Models.ProfileModel> e)
     {
         Selected.Add(e);
     }
@@ -92,9 +92,9 @@ public partial class DrawerPeople
     /// Deseleccionar un perfil.
     /// </summary>
     /// <param name="profile">Perfil.</param>
-    void UnSelect(int profile)
+    private void UnSelect(int profile)
     {
-        Selected.RemoveAll(t => t.Profile.ID == profile);
+        Selected.RemoveAll(t => t.Profile.Id == profile);
     }
 
 
@@ -103,11 +103,11 @@ public partial class DrawerPeople
     /// </summary>
     /// <param name="e">Perfil.</param>
     /// <param name="exist">Existe.</param>
-    void SelectControl(Types.Cloud.Identity.Abstracts.SessionModel<Types.Inventory.Models.ProfileModel> e, bool exist)
+    private void SelectControl(Types.Cloud.Identity.Abstracts.SessionModel<Types.Inventory.Models.ProfileModel> e, bool exist)
     {
         // Deseleccionar.
         if (exist)
-            UnSelect(e.Profile.ID);
+            UnSelect(e.Profile.Id);
 
         // Seleccionar.
         else

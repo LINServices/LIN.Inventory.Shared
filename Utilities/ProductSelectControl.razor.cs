@@ -35,14 +35,7 @@ public partial class ProductSelectControl
     private string GetImage()
     {
 
-        if (Model.Image.Length <= 0)
-        {
-            return "./img/Products/packages.png";
-        }
-
-        return $"data:image/png;base64,{Convert.ToBase64String(Model.Image)}";
-
-
+        return Model.Image.Length <= 0 ? "./img/Products/packages.png" : $"data:image/png;base64,{Convert.ToBase64String(Model.Image)}";
     }
 
     private (string, string, string) GetClass()

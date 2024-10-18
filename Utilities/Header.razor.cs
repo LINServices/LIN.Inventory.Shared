@@ -24,9 +24,7 @@ public partial class Header
     [Parameter]
     public RenderFragment? ChildContent { get; set; } = null;
 
-
-
-    void GoBackPage()
+    private void GoBackPage()
     {
         JS.InvokeVoidAsync("backLast");
     }

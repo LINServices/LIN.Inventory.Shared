@@ -38,19 +38,14 @@ public partial class DeviceControl
     {
 
         // Segun.
-        switch (Model?.Platform)
+        return (Model?.Platform) switch
         {
             // Android.
-            case "Android":
-                return "./img/android.png";
-
+            "Android" => "./img/android.png",
             // Windows
-            case "Windows" or "WinUI":
-                return "./img/windows.png";
-
-        }
-        return "./img/unknow.png";
-
+            "Windows" or "WinUI" => "./img/windows.png",
+            _ => "./img/unknow.png",
+        };
     }
 
 

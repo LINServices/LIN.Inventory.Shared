@@ -26,7 +26,7 @@ public partial class BottomNavigation
     /// Ir a la sección.
     /// </summary>
     /// <param name="section">Numero de la sección.</param>
-    void GoSection(int section)
+    private void GoSection(int section)
     {
 
         if (section == 0)

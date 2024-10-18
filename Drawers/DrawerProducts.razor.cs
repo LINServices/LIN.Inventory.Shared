@@ -52,7 +52,7 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
     /// </summary>
     protected override void OnParametersSet()
     {
-        Result = Contexto.Products?.Models ?? [];
+        Result = Contexto.Products?.Models.ToList() ?? [];
 
         ProductObserver.Add(Contexto.Inventory.ID, this);
 
@@ -70,7 +70,7 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
         // Si es null o vacío.
         if (string.IsNullOrWhiteSpace(e.Value?.ToString()))
         {
-            Result = Contexto.Products?.Models ?? [];
+            Result = Contexto.Products?.Models.ToList() ?? [];
             StateHasChanged();
             return;
         }
@@ -110,7 +110,7 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
     /// Seleccionar un perfil.
     /// </summary>
     /// <param name="e">Perfil.</param>
-    void Select(ProductModel e)
+    private void Select(ProductModel e)
     {
         Selected.Add(e);
     }
@@ -120,7 +120,7 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
     /// Deseleccionar un perfil.
     /// </summary>
     /// <param name="id">Id.</param>
-    void UnSelect(int id)
+    private void UnSelect(int id)
     {
         Selected.RemoveAll(t => t.Id == id);
     }
@@ -131,7 +131,7 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
     /// </summary>
     /// <param name="e">Perfil.</param>
     /// <param name="exist">Existe.</param>
-    void SelectControl(ProductModel e, bool exist)
+    private void SelectControl(ProductModel e, bool exist)
     {
         // Deseleccionar.
         if (exist)
@@ -154,7 +154,7 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
     {
         InvokeAsync(() =>
         {
-            Result = Contexto.Products?.Models ?? [];
+            Result = Contexto.Products?.Models.ToList() ?? [];
 
             // Eliminar de los seleccionados.
             var es = Contexto.Products?.Models.IntersectBy(Selected.Select(t => t.Id) ?? [], (T) => T.Id).ToList();

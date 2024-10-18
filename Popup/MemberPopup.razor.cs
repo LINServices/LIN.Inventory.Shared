@@ -43,7 +43,8 @@ public partial class MemberPopup
 
 
     private int _type = 0;
-    int Type
+
+    private int Type
     {
         get => _type; set
         {
@@ -108,7 +109,7 @@ public partial class MemberPopup
     /// <summary>
     /// Eliminar integrante.
     /// </summary>
-    async void Delete()
+    private async void Delete()
     {
 
         // Validación.

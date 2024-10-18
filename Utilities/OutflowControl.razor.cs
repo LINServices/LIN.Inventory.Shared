@@ -36,24 +36,16 @@ public partial class OutflowControl
 
 
 
-        switch (Model.Type)
+        return Model.Type switch
         {
-            case Types.Inventory.Enumerations.OutflowsTypes.Consumo:
-                return "./img/Products/outflows/seller.png";
-            case Types.Inventory.Enumerations.OutflowsTypes.Donacion:
-                return "./img/Products/outflows/donate.png";
-            case Types.Inventory.Enumerations.OutflowsTypes.Fraude:
-                return "./img/Products/outflows/criminal.png";
-            case Types.Inventory.Enumerations.OutflowsTypes.Venta:
-                return "./img/Products/outflows/shop.png";
-            case Types.Inventory.Enumerations.OutflowsTypes.Perdida:
-                return "./img/Products/outflows/lost.png";
-            case Types.Inventory.Enumerations.OutflowsTypes.Caducidad:
-                return "./img/Products/outflows/expired.png";
-            default:
-                return "./img/Products/packages.png";
-        }
-
+            Types.Inventory.Enumerations.OutflowsTypes.Consumo => "./img/Products/outflows/seller.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Donacion => "./img/Products/outflows/donate.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Fraude => "./img/Products/outflows/criminal.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Venta => "./img/Products/outflows/shop.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Perdida => "./img/Products/outflows/lost.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Caducidad => "./img/Products/outflows/expired.png",
+            _ => "./img/Products/packages.png",
+        };
     }
 
 }
