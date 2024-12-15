@@ -41,9 +41,9 @@ public partial class DeviceControl
         return (Model?.Platform) switch
         {
             // Android.
-            "Android" => "./img/android.png",
+            "android" => "./img/android.png",
             // Windows
-            "Windows" or "WinUI" => "./img/windows.png",
+            "windows" or "winui" => "./img/windows.png",
             _ => "./img/unknow.png",
         };
     }
