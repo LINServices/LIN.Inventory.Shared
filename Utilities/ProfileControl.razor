@@ -1,10 +1,10 @@
 ﻿<div @onclick="SendEvent" class="mt-2 flex items-center rounded-lg bg-white p-3 shadow-sm dark:bg-zinc-900 @(State?"ring-2 ring-current-500":"")">
     <div class="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-gray-100 dark:bg-zinc-800">
-        <span class="font-medium text-gray-600 dark:text-gray-300">@Global.Utilities.Strings.GetInitials(Model.Account.Name ?? "")</span>
+        <span class="font-medium text-gray-600 dark:text-gray-300">@Global.Utilities.Strings.GetInitials(Model?.Account.Name ?? "")</span>
     </div>
 
     <div class="ml-2 flex flex-col">
-        <label class="text-sm font-bold text-zinc-700 dark:text-zinc-300">@(Model.Account.Name ?? "Sin nombre")</label>
-        <label class="-mt-1 text-xs text-zinc-600 dark:text-zinc-400">@(Model.Account.Identity.Unique ?? "Sin tipo")</label>
+        <label class="text-sm font-bold text-zinc-700 dark:text-zinc-300">@(Model?.Account.Name ?? "Sin nombre")</label>
+        <label class="-mt-1 text-xs text-zinc-600 dark:text-zinc-400">@(Model?.Account.Identity.Unique ?? "Sin tipo")</label>
     </div>
 </div>
