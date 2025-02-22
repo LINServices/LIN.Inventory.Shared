@@ -54,7 +54,7 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
     {
         Result = Contexto.Products?.Models.ToList() ?? [];
 
-        ProductObserver.Add(Contexto.Inventory.ID, this);
+        ProductObserver.Add(Contexto.Inventory.Id, this);
 
         base.OnParametersSet();
     }

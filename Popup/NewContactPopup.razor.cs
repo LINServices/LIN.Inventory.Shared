@@ -86,7 +86,7 @@ public partial class NewContactPopup
         {
             Type = ContactTypes.Provider,
             Nombre = Name,
-            Picture = Profile,
+            //Picture = Profile,
             Mails = [new MailModel()
             {
                 Email = string.IsNullOrWhiteSpace(Mail) ? "Sin email" : Mail

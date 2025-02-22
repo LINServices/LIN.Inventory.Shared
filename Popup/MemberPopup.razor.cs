@@ -96,7 +96,7 @@ public partial class MemberPopup
             return;
 
         // Enviar update.
-        var response = await Access.Inventory.Controllers.InventoryAccess.UpdateRol(Model.AccessID, (InventoryRoles)newRol, Session.Instance.Token);
+        var response = await Access.Inventory.Controllers.InventoryAccess.UpdateRol(Model.AccessId, (InventoryRoles)newRol, Session.Instance.Token);
 
         if (response.Response == Responses.Success)
         {
@@ -117,10 +117,10 @@ public partial class MemberPopup
             return;
 
         // Enviar petición.
-        var response = await Access.Inventory.Controllers.InventoryAccess.DeleteSomeOne(Model.InventoryID, Model.ProfileID, Session.Instance.Token);
+        var response = await Access.Inventory.Controllers.InventoryAccess.DeleteSomeOne(Model.InventoryId, Model.ProfileId, Session.Instance.Token);
 
         if (response.Response == Responses.Success)
-            OnDelete(Model.AccessID);
+            OnDelete(Model.AccessId);
     }
 
 }

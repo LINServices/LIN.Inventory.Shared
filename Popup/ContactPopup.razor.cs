@@ -37,12 +37,6 @@ public partial class ContactPopup
 
 
     /// <summary>
-    /// Imagen en base64.
-    /// </summary>
-    private string Img64 => Convert.ToBase64String(Modelo?.Picture ?? []);
-
-
-    /// <summary>
     /// Enviar el comando al selector.
     /// </summary>
     private void Send()

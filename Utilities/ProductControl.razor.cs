@@ -34,7 +34,7 @@ public partial class ProductControl
 
         return Model?.Image.Length <= 0
             ? "./img/Products/packages.png"
-            : $"data:image/png;base64,{Convert.ToBase64String(Model?.Image ?? [])}";
+            : Model?.Image;
     }
 
 

@@ -27,8 +27,4 @@ public partial class ContactControl
     {
         OnClick?.Invoke(Model);
     }
-
-    private string Img64 => Convert.ToBase64String(Model?.Picture ?? []);
-
-
 }
