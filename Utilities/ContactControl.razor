@@ -4,7 +4,7 @@
     @if (Model?.Picture == null || Model.Picture.Length <= 0)
     {
         <div class="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-gray-100 dark:bg-zinc-800">
-            <span class="font-medium text-gray-600 dark:text-gray-300">@Global.Utilities.Strings.GetInitials(Model?.Nombre ?? "")</span>
+            <span class="font-medium text-gray-600 dark:text-gray-300">@Global.Utilities.Strings.GetInitials(Model?.Name ?? "")</span>
         </div>
     }
     else
@@ -13,7 +13,7 @@
     }
   
     <div class="ml-2 flex flex-col">
-        <label class="text-sm font-bold text-zinc-700 dark:text-zinc-300">@(Model?.Nombre ?? "Sin nombre")</label>
+        <label class="text-sm font-bold text-zinc-700 dark:text-zinc-300">@(Model?.Name ?? "Sin nombre")</label>
         <label class="-mt-1 text-xs text-zinc-600 dark:text-zinc-400">@(Model?.Type.ToString() ?? "Sin tipo")</label>
     </div>
 

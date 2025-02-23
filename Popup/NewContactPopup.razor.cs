@@ -85,7 +85,7 @@ public partial class NewContactPopup
         var modelo = new ContactModel
         {
             Type = ContactTypes.Provider,
-            Nombre = Name,
+            Name = Name,
             //Picture = Profile,
             Mails = [new MailModel()
             {
