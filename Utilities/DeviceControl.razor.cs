@@ -38,10 +38,12 @@ public partial class DeviceControl
     {
 
         // Segun.
-        return (Model?.Platform) switch
+        return (Model?.Platform.ToLower()) switch
         {
             // Android.
             "android" => "./img/android.png",
+            // Web.
+            "web" => "./img/globe.png",
             // Windows
             "windows" or "winui" => "./img/windows.png",
             _ => "./img/unknow.png",
