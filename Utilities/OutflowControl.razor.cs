@@ -38,12 +38,12 @@ public partial class OutflowControl
 
         return Model.Type switch
         {
-            Types.Inventory.Enumerations.OutflowsTypes.Consumo => "./img/Products/outflows/seller.png",
-            Types.Inventory.Enumerations.OutflowsTypes.Donacion => "./img/Products/outflows/donate.png",
-            Types.Inventory.Enumerations.OutflowsTypes.Fraude => "./img/Products/outflows/criminal.png",
-            Types.Inventory.Enumerations.OutflowsTypes.Venta => "./img/Products/outflows/shop.png",
-            Types.Inventory.Enumerations.OutflowsTypes.Perdida => "./img/Products/outflows/lost.png",
-            Types.Inventory.Enumerations.OutflowsTypes.Caducidad => "./img/Products/outflows/expired.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Usage => "./img/Products/outflows/seller.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Contribution => "./img/Products/outflows/donate.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Fraud => "./img/Products/outflows/criminal.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Purchase => "./img/Products/outflows/shop.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Loss => "./img/Products/outflows/lost.png",
+            Types.Inventory.Enumerations.OutflowsTypes.Expiry => "./img/Products/outflows/expired.png",
             _ => "./img/Products/packages.png",
         };
     }
