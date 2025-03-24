@@ -11,11 +11,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Bing.QRCode.QRCoder" Version="1.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.3" />
 		<PackageReference Include="SILF.Script" Version="13.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Pages\" />
 		<Folder Include="wwwroot\" />
 	</ItemGroup>
 
