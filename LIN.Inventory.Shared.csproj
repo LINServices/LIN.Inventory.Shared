@@ -12,7 +12,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Bing.QRCode.QRCoder" Version="1.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.4" />
 		<PackageReference Include="SILF.Script" Version="13.3.0" />
 	</ItemGroup>
 
@@ -24,6 +24,10 @@
 	<ItemGroup>
 		<ProjectReference Include="..\LIN.Emma.UI\LIN.Emma.UI\LIN.Emma.UI.csproj" />
 		<ProjectReference Include="..\LIN.Inventory.Realtime\LIN.Inventory.Realtime.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
 	</ItemGroup>
 
 </Project>
