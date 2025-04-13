@@ -52,9 +52,9 @@ public partial class DrawerProducts : IInventoryModelObserver, IDisposable
     /// </summary>
     protected override void OnParametersSet()
     {
-        Result = Contexto.Products?.Models.ToList() ?? [];
+        Result = Contexto?.Products?.Models.ToList() ?? [];
 
-        ProductObserver.Add(Contexto.Inventory.Id, this);
+        ProductObserver.Add(Contexto?.Inventory?.Id ?? 0, this);
 
         base.OnParametersSet();
     }

@@ -1,0 +1,30 @@
+﻿
+<div @onclick="SendEvent" class="mt-2 flex items-center justify-between rounded-lg bg-white p-3 shadow-sm dark:bg-zinc-900">
+
+    <div class="flex items-center justify-between">
+        <div class="bg-ring-100 h-10 w-10 rounded-lg fill-money p-2 ring-1 ring-zinc-300 dark:ring-zinc-600">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512"><path d="M23.999,8c0-1.271-.583-2.439-1.6-3.205-1.007-.757-2.274-.991-3.481-.644-.857,.248-1.848,.349-3.418,.349-1.366,0-2.639-.347-3.987-.715-1.415-.386-2.879-.785-4.513-.785-1.159,0-2.427,.259-3.768,.771C1.298,4.508-.002,6.389-.002,8.452v7.548c0,1.271,.584,2.439,1.601,3.205,1.006,.757,2.274,.991,3.481,.644,.857-.248,1.849-.349,3.42-.349,1.366,0,2.639,.347,3.985,.715,1.415,.386,2.879,.785,4.513,.785,1.159,0,2.427-.259,3.768-.771,1.935-.737,3.234-2.618,3.234-4.681v-7.548ZM5,15c-.552,0-1-.448-1-1s.448-1,1-1,1,.448,1,1-.448,1-1,1Zm0-6c-.552,0-1-.448-1-1s.448-1,1-1,1,.448,1,1-.448,1-1,1Zm9,6c0,.552-.447,1-1,1s-1-.448-1-1v-3.586l-.293,.293c-.391,.391-1.023,.391-1.414,0s-.391-1.023,0-1.414l2-2c.286-.287,.716-.372,1.09-.217,.374,.155,.617,.52,.617,.924v6Zm5,2c-.552,0-1-.448-1-1s.448-1,1-1,1,.448,1,1-.448,1-1,1Zm0-6c-.552,0-1-.448-1-1s.448-1,1-1,1,.448,1,1-.448,1-1,1Z" /></svg>
+        </div>
+
+        <div class="ml-2 flex flex-col">
+            <label class="text-sm font-bold text-zinc-700 dark:text-zinc-300">Pago</label>
+            <label class="-mt-1 text-xs text-zinc-600 dark:text-zinc-400">$@Model?.Amount</label>
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="flex h-7 w-20 items-center justify-center rounded-lg">
+            <svg class="mr-1.5 h-3 w-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003zM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z" />
+
+            </svg>
+            <label class="mt-0.5 text-sm font-bold">Salida</label>
+        </div>
+        <div class="flex h-7 w-20 items-center justify-center rounded-lg">
+            <svg class="mr-1.5 h-3 w-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003zM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z" />
+            </svg>
+            <label class="mt-0.5 text-sm font-bold">@Model?.Status.ToString()</label>
+        </div>
+    </div>
+</div>

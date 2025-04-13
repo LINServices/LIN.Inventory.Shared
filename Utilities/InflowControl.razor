@@ -1,15 +1,23 @@
 ﻿
-<div @onclick="SendEvent" class="flex justify-between items-center bg-white shadow-sm rounded-lg p-3 dark:bg-zinc-900 mt-2">
+<div @onclick="SendEvent" class="mt-2 flex items-center justify-between rounded-lg bg-white p-3 shadow-sm dark:bg-zinc-900">
 
-    <div class="flex justify-between items-center">
-        <div class="h-10 w-10 p-2 rounded-lg  ring-1 ring-zinc-300 bg-ring-100 dark:ring-zinc-600 ">
+    <div class="flex items-center justify-between">
+        <div class="bg-ring-100 h-10 w-10 rounded-lg p-2 ring-1 ring-zinc-300 dark:ring-zinc-600">
             <img class="h-full w-full" src="@GetImage()" />
         </div>
 
-        <div class="flex flex-col ml-2">
-            <label class="font-bold text-sm text-zinc-700 dark:text-zinc-300">@(Model?.Type.ToString() ?? "Sin categoría")</label>
-            <label class="text-xs -mt-1 text-zinc-600 dark:text-zinc-400 dark:fill-zinc-400">@(Model?.CountDetails.ToString() ?? "0 Detalles")</label>
-        </div>
+        <div class="ml-2 flex flex-col">
+            <label class="text-sm font-bold text-zinc-700 dark:text-zinc-300">@(Model?.Type.ToString() ?? "Sin categoría")</label>
+            <div class="mt-0.5 flex gap-1">
+
+                @if (!Model?.IsAccepted ?? false)
+                {
+                    <span class="text-orange-500-800 rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-medium text-orange-500 dark:bg-orange-900 dark:text-orange-300">Pendiente</span>
+                }
+                 <span class="rounded-full bg-current-100 px-2.5 py-0.5 text-xs font-medium text-current-800 dark:bg-current-900 dark:text-current-300">@(Model?.CountDetails.ToString() ?? "0") detalles</span>
+                
+            </div>
+           </div>
     </div>
 
 </div>
