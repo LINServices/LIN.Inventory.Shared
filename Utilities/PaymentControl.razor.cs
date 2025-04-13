@@ -30,11 +30,22 @@ public partial class PaymentControl
     private string GetClasses()
     {
         if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Approved)
-            return "bg-money text-white";
+            return "text-money";
         if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Pending)
-            return "bg-orange-500 text-white";
+            return "text-orange-500";
 
-        return "bg-red-500 text-white";
+        return "text-red-500";
+
+    }
+
+    private string GetClassesSvg()
+    {
+        if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Approved)
+            return "fill-money";
+        if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Pending)
+            return "fill-orange-500";
+
+        return "fill-red-500";
 
     }
 
