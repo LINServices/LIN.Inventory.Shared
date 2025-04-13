@@ -27,6 +27,15 @@ public partial class PaymentControl
         OnClick?.Invoke(Model);
     }
 
+    private string GetClasses()
+    {
+        if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Approved)
+            return "bg-money text-white";
+        if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Pending)
+            return "bg-orange-500 text-white";
 
+        return "bg-red-500 text-white";
+
+    }
 
 }
