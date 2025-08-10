@@ -12,7 +12,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Bing.QRCode.QRCoder" Version="1.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.8" />
 		<PackageReference Include="SILF.Script" Version="13.3.0" />
 	</ItemGroup>
 
