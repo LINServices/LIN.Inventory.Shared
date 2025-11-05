@@ -34,8 +34,9 @@ public partial class ProductSelectControl
 
     private string GetImage()
     {
-
-        return Model.Image.Length <= 0 ? "./img/Products/packages.png" : Model.Image;
+        return Model?.Image.Length <= 0
+            ? "./img/Products/packages.png"
+            : "https://api.linplatform.com/bucket/PublicFiles/" + Model?.Image + ".png";
     }
 
     private (string, string, string) GetClass()

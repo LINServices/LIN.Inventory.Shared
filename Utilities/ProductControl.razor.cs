@@ -18,6 +18,8 @@ public partial class ProductControl
     public Action<ProductModel?>? OnClick { get; set; }
 
 
+    private string Category => (Model.Category == Types.Inventory.Enumerations.ProductCategories.Undefined) ? "Sin categoría" : Model.Category.ToString();
+
 
     /// <summary>
     /// Enviar el evento.

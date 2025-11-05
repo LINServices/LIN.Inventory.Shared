@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@inject IJSRuntime JS
+
+<InputFile id="@_inputId" @ref="_inputFile" style="display:none"
+           OnChange="HandleSelected"
+           accept="@Accept" />
+
+@code {
+
+    [Parameter] 
+    public EventCallback OnFileSelected { get; set; }
+
+    private InputFile? _inputFile;
+    private readonly string _inputId = $"filePicker_{Guid.NewGuid()}";
+    private byte[]? _fileBytes;
+    private string? _contentType;
+    private string? _fileName;
+
+    /// <summary>
+    /// Define qué tipos de archivo acepta el selector (por defecto: imágenes)
+    /// </summary>
+    [Parameter] public string Accept { get; set; } = "image/png,image/jpeg";
+
+    /// <summary>
+    /// Abre el diálogo de selección de archivos (desde JS)
+    /// </summary>
+    public async Task OpenAsync()
+    {
+        await JS.InvokeVoidAsync("fileUploadHelpers.triggerClick", _inputId);
+    }
+
+    /// <summary>
+    /// Devuelve el contenido del archivo seleccionado (en bytes)
+    /// </summary>
+    public byte[]? GetFile() => _fileBytes;
+
+    /// <summary>
+    /// Devuelve el tipo MIME del archivo
+    /// </summary>
+    public string? GetContentType() => _contentType;
+
+    /// <summary>
+    /// Devuelve el nombre original del archivo
+    /// </summary>
+    public string? GetFileName() => _fileName;
+
+    private async Task HandleSelected(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file == null)
+        {
+            _fileBytes = null;
+            _fileName = null;
+            _contentType = null;
+            return;
+        }
+
+        using var ms = new MemoryStream();
+        await file.OpenReadStream(5 * 1024 * 1024).CopyToAsync(ms); // Máx. 5 MB
+
+        _fileBytes = ms.ToArray();
+        _fileName = file.Name;
+        _contentType = file.ContentType;
+
+        await OnFileSelected.InvokeAsync();
+    }
+}
