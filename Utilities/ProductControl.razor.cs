@@ -31,10 +31,9 @@ public partial class ProductControl
 
     private string GetImage()
     {
-
         return Model?.Image.Length <= 0
             ? "./img/Products/packages.png"
-            : Model?.Image;
+            : "https://api.linplatform.com/bucket/PublicFiles/" + Model?.Image +  ".png";
     }
 
 

@@ -12,7 +12,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Bing.QRCode.QRCoder" Version="1.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.9" />
+		<PackageReference Include="LIN.Cloud.SDK" Version="1.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.10" />
 		<PackageReference Include="SILF.Script" Version="13.3.0" />
 	</ItemGroup>
 

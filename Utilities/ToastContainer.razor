@@ -1,0 +1,51 @@
+﻿@using LIN.Inventory.Shared.Services
+@inject ToastService ToastService
+
+<div class="-translate-x-1/2 fixed left-1/2 top-4 z-50 w-full max-w-lg transform space-y-3 px-4">
+    @foreach (var toast in toasts)
+    {
+        <div class="animate-fade-in mt-2 flex w-full items-center space-x-4 divide-x divide-zinc-200 rounded-lg bg-zinc-100 p-4 text-zinc-500 shadow-sm dark:divide-zinc-700 dark:bg-zinc-800 dark:text-zinc-400" role="alert">
+            
+            @if (toast.Item2 == 1)
+            {
+                <svg class="h-5 w-5 fill-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+            }
+            else if (toast.Item2 == 2)
+            {
+                <svg class="h-5 w-5 fill-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
+                </svg>
+            }
+            else if (toast.Item2 == 3)
+            {
+                <svg class="h-5 w-5 fill-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM10 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 0 1-2 0V6a1 1 0 0 1 2 0v5Z" />
+                </svg>
+            }
+            <div class="ps-4 text-sm font-normal">@toast.Item1</div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<(string, int)> toasts = new();
+
+    protected override void OnInitialized()
+    {
+        ToastService.OnShow += AddToast;
+    }
+
+    private async void AddToast((string, int) message)
+    {
+        toasts.Add(message);
+        StateHasChanged();
+
+        // Espera 5 segundos y elimina el toast
+        await Task.Delay(5000);
+
+        toasts.Remove(message);
+        StateHasChanged();
+    }
+}

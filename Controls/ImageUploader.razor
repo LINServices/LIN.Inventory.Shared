@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@inject IJSRuntime JS
+
+
+<button @onclick="TriggerClick" type="button" id="decrement-button" data-input-counter-decrement="bedrooms-input" class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 p-3.5 text-gray-900 placeholder-gray-400 focus:border-current-500 focus:ring-current-500 focus:bg-white focus:outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-100 sm:text-xs focus:dark:bg-[#323232]">
+    
+    @if (PreviewDataUrl != null)
+    {
+        <div class="flex gap-2">
+            <img src="@PreviewDataUrl" height="16" width="16" />
+            <label class="hover:text-red-500" @onclick:stopPropagation="true" @onclick="Delete">Eliminar</label>
+        </div>
+    }
+    else{
+ <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-file-earmark-image dark:fill-current-100" viewBox="0 0 16 16">
+        <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+        <path d="M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1z" />
+    </svg>
+    }
+    
+   
+</button>
+
+<InputFile id="bbt" @ref="inputFile" style="display:none" OnChange="HandleSelected" accept="image/png,image/jpeg" />
+
+
+@code {
+    private ElementReference? inputFileElement;
+    private InputFile? inputFile;
+    public string? PreviewDataUrl;
+    public byte[]? ImageBytes { get; private set; }
+
+    private async Task TriggerClick()
+    {
+        // Usa JS para hacer click en el <input type="file"> generado por InputFile
+        await JS.InvokeVoidAsync("fileUploadHelpers.triggerClick", "bbt");
+    }
+
+    private void Delete()
+    {
+        ImageBytes = [];
+        PreviewDataUrl = null;
+        StateHasChanged();
+    }
+
+    private async Task HandleSelected(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+
+        if (file == null)
+            return;
+
+        using var ms = new MemoryStream();
+        await file.OpenReadStream(5 * 1024 * 1024).CopyToAsync(ms); // hasta 5MB
+        ImageBytes = ms.ToArray();
+
+        var base64 = Convert.ToBase64String(ImageBytes);
+        PreviewDataUrl = $"data:{file.ContentType};base64,{base64}";
+    }
+}
