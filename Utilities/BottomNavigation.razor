@@ -1,6 +1,6 @@
 ﻿@inject NavigationManager navigationManager
 
-<div class="bottom-4 mx-1.5 h-16 w-full max-w-lg rounded-full border border-gray-200 bg-white dark:bg-zinc-900 dark:border-zinc-700">
+<div class="bottom-4 mx-1.5 h-16 w-full max-w-lg rounded-full border border-gray-200 bg-white dark:border-zinc-700 dark:bg-zinc-900">
     <div class="mx-auto grid h-full max-w-lg grid-cols-5">
 
         @* Botón de Home *@
@@ -23,7 +23,7 @@
 
         @* Botón central *@
         <div class="flex items-center justify-center">
-            <button @onclick="Settings.OnCenterClick" data-tooltip-target="tooltip-new" type="button" class="animate-button group inline-flex h-10 w-10 items-center justify-center rounded-full bg-current-500 font-medium hover:bg-current-700 focus:ring-4 focus:ring-current-300 focus:outline-none dark:focus:ring-current-800">
+            <button @onclick="Settings.OnCenterClick" data-tooltip-target="tooltip-new" type="button" class="animate-button group inline-flex h-10 w-10 items-center justify-center rounded-full bg-current-500 font-medium hover:bg-current-700 focus:outline-none focus:ring-4 focus:ring-current-300 dark:focus:ring-current-800">
                 @if (Settings.DockIcon == 0)
                 {
                     <svg class="h-4 w-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">

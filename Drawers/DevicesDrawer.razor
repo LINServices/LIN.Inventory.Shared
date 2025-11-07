@@ -15,23 +15,23 @@
             </div>
 
             @* Componentes. *@
-            <div id="close-all-all" class="flex-1 UIScroll mt-2 h-full gap-3 overflow-y-auto p-0.5">
+            <div id="close-all-all" class="UIScroll mt-2 h-full flex-1 gap-3 overflow-y-auto p-0.5">
 
                 @if (DevicesList == null || DevicesList.Response == Responses.IsLoading)
                 {
-                    <div class="border-2 mt-3 flex w-full items-center justify-center rounded-lg border-dashed border-zinc-300 py-7 dark:border-gray-400">
+                    <div class="mt-3 flex w-full items-center justify-center rounded-lg border-2 border-dashed border-zinc-300 py-7 dark:border-gray-400">
                         <Loader></Loader>
                     </div>
                 }
                 else if (DevicesList.Response != Responses.Success)
                 {
-                    <div class="border-2 mt-3 flex w-full items-center justify-center rounded-lg border-dashed border-zinc-300 py-10 dark:border-gray-400">
+                    <div class="mt-3 flex w-full items-center justify-center rounded-lg border-2 border-dashed border-zinc-300 py-10 dark:border-gray-400">
                         <label class="text-zinc-400 dark:text-gray-200">Hubo un error</label>
                     </div>
                 }
                 else if (DevicesList.Models.Count() <= 0)
                 {
-                    <div class="border-2 mt-3 flex w-full items-center justify-center rounded-lg border-dashed border-zinc-300 py-10 dark:border-gray-400">
+                    <div class="mt-3 flex w-full items-center justify-center rounded-lg border-2 border-dashed border-zinc-300 py-10 dark:border-gray-400">
                         <label class="text-zinc-400 dark:text-gray-200">Sin dispositivos</label>
                     </div>
                 }
@@ -46,8 +46,8 @@
 
             @* Obtener dispositivos. *@
             <div class="mb-2 mt-2 flex w-full items-end justify-center gap-2 self-end">
-                <button @onclick="GetDevices" type="button" class="w-full rounded-lg bg-current-500 px-3 py-2 text-center text-sm font-medium text-white hover:bg-current-600 focus:ring-4 focus:outline-none focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">Actualizar</button>
-                <button id="btn-close-@_id" type="button" class="w-full rounded-lg bg-current-500 px-3 py-2 text-center text-sm font-medium text-white hover:bg-current-600 focus:ring-4 focus:outline-none focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">Aceptar</button>
+                <button @onclick="GetDevices" type="button" class="w-full rounded-lg bg-current-500 px-3 py-2 text-center text-sm font-medium text-white hover:bg-current-600 focus:outline-none focus:ring-4 focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">Actualizar</button>
+                <button id="btn-close-@_id" type="button" class="w-full rounded-lg bg-current-500 px-3 py-2 text-center text-sm font-medium text-white hover:bg-current-600 focus:outline-none focus:ring-4 focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">Aceptar</button>
             </div>
 
         </div>

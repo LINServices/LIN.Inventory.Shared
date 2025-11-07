@@ -9,15 +9,11 @@ public partial class PaymentControl
     [Parameter]
     public LIN.Types.Payments.Models.PayModel? Model { get; set; }
 
-
-
     /// <summary>
     /// Evento al hacer click.
     /// </summary>
     [Parameter]
     public Action<LIN.Types.Payments.Models.PayModel?>? OnClick { get; set; }
-
-
 
     /// <summary>
     /// Enviar el evento.
@@ -47,6 +43,18 @@ public partial class PaymentControl
 
         return "fill-red-500";
 
+    }
+
+    private string GetStatusText()
+    {
+        if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Approved)
+            return "Aprobado";
+        if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Pending)
+            return "Pendiente";
+        if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Refunded)
+            return "Devuelto";
+
+        return "Rechazado";
     }
 
 }

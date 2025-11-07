@@ -8,20 +8,20 @@
 
         <div class="ml-2 flex flex-col">
             <label class="text-sm font-bold text-zinc-700 dark:text-zinc-300">Pago</label>
-            <label class="-mt-0.5 text-xs text-zinc-600 dark:text-zinc-400">$@Model?.Amount ● <span class="font-bold @GetClasses()">@Model?.Status.ToString()</span> </label>
+            <label class="-mt-0.5 text-xs text-zinc-600 dark:text-zinc-400">$@Model?.Amount ● <span class="font-bold @GetClasses()">@GetStatusText()</span> </label>
         </div>
     </div>
 
     <div class="flex gap-2">
         @if (Model?.Status == Types.Payments.Enums.PayStatusEnum.Approved)
         {
-            <button type="button" class="inline-flex h-7 items-center rounded-full bg-current-500 p-2 text-center text-xs font-medium text-white hover:bg-current-600 focus:ring-4 focus:outline-none focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">
+            <button type="button" class="inline-flex h-7 items-center rounded-full bg-current-500 p-2 text-center text-xs font-medium text-white hover:bg-current-600 focus:outline-none focus:ring-4 focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">
                 <svg class="h-3 w-3 fill-white text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="m17.024,8.988l2.26-2.26c-1.692-2.334-4.399-3.728-7.284-3.728C7.038,3,3,7.037,3,12s4.038,9,9,9,9-4.037,9-9h3c0,6.617-5.383,12-12,12S0,18.617,0,12,5.383,0,12,0c3.687,0,7.147,1.715,9.416,4.596l2.584-2.584v5.83c0,.633-.513,1.146-1.146,1.146h-5.83Zm-1.024,1.012v-.5c0-1.58-1.059-2.903-2.5-3.337v-1.163h-3v1.163c-1.441.434-2.5,1.757-2.5,3.337,0,1.528.917,2.883,2.335,3.449l2.216.887c.273.109.449.37.449.664,0,.275-.224.5-.5.5h-1c-.276,0-.5-.225-.5-.5v-.5h-3v.5c0,1.58,1.059,2.903,2.5,3.337v1.163h3v-1.163c1.441-.434,2.5-1.757,2.5-3.337,0-1.528-.917-2.883-2.335-3.449l-2.216-.887c-.273-.109-.449-.37-.449-.664,0-.275.224-.5.5-.5h1c.276,0,.5.225.5.5v.5h3Z" />
                 </svg>
             </button>
         }
-        <button type="button" class="inline-flex h-7 items-center rounded-full bg-current-500 p-2 text-center text-xs font-medium text-white hover:bg-current-600 focus:ring-4 focus:outline-none focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">
+        <button type="button" class="inline-flex h-7 items-center rounded-full bg-current-500 p-2 text-center text-xs font-medium text-white hover:bg-current-600 focus:outline-none focus:ring-4 focus:ring-current-300 dark:bg-current-600 dark:hover:bg-current-700 dark:focus:ring-current-800">
             <svg class="h-3 w-3 fill-white text-white" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M23.715,6.937l-1.022-2.236c-.453-.753-1.14-1.337-1.956-1.663L14.223,.43c-.716-.286-1.473-.43-2.23-.43s-1.517,.144-2.234,.431L3.261,3.038c-.815,.327-1.5,.91-1.953,1.662L.285,6.937c-.657,1.095-.131,2.517,1.08,2.92l6.971,3.124c.208,.069,.422,.103,.632,.103,.688,0,1.346-.356,1.715-.971l1.306-2.448,1.326,2.448c.369,.615,1.028,.971,1.715,.971,.211,0,.424-.033,.632-.103l6.971-3.124c1.211-.404,1.737-1.825,1.08-2.92Zm-5.218-1.565l-6.496,2.407-6.498-2.407,5.374-2.156c.357-.143,.733-.216,1.117-.216s.759,.072,1.115,.215l5.388,2.157Zm3.502,6.96l-.003,4.925c-.002,2.273-1.452,4.282-3.608,5.001l-4.126,1.375c-.73,.244-1.498,.365-2.266,.365s-1.535-.122-2.265-.365l-4.122-1.374c-2.161-.72-3.61-2.733-3.608-5.009v-4.917l3,1.344v3.574c0,.983,.625,1.851,1.557,2.162l3.939,1.313,.002-5.968c.573-.236,1.094-.594,1.502-1.066,.409,.473,.927,.83,1.498,1.069l-.002,5.964,3.943-1.313c.93-.31,1.556-1.177,1.557-2.158l.002-3.582,3.001-1.34Z" /></svg>
         </button>
     </div>
