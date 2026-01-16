@@ -10,7 +10,7 @@
             <label class="text-sm font-bold text-zinc-700 dark:text-zinc-300">@(Model?.Type.ToString() ?? "Sin categoría")</label>
             <div class="mt-0.5 flex gap-1">
 
-                @if (!Model?.IsAccepted ?? false)
+                @if (Model?.Status == Types.Inventory.Enumerations.MovementStatus.Pending)
                 {
                     <span class="text-orange-500-800 rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-medium text-orange-500 dark:bg-orange-900 dark:text-orange-300">Pendiente</span>
                 }
